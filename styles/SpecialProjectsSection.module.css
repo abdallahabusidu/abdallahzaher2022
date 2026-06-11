@@ -332,3 +332,41 @@
     padding: 0 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3.2rem 0 2.8rem;
+  }
+
+  .inner {
+    padding: 0 1.2rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .logoWrap {
+    height: 65px;
+  }
+
+  .logoSticker {
+    min-width: 110px;
+    min-height: 50px;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  /* Reduce large top margin on links */
+  .link,
+  .privateBadge {
+    margin-top: 1.8rem;
+  }
+}
