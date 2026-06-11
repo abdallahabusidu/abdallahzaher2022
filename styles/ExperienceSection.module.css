@@ -420,3 +420,39 @@
     padding: 0 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .inner {
+    padding: 0 1.2rem;
+  }
+
+  .heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .card {
+    padding: 1.3rem 1.2rem 1.1rem;
+  }
+
+  /* Stack index number above the period/badges row */
+  .cardMeta {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cardIndex {
+    font-size: 1.5rem;
+  }
+
+  .cardCompany {
+    font-size: 1.2rem;
+  }
+
+  .cardItem {
+    font-size: 0.85rem;
+  }
+}

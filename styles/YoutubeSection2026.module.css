@@ -148,3 +148,21 @@
     padding: 0 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .inner {
+    padding: 0 1.2rem;
+  }
+
+  .heading {
+    font-size: clamp(1.7rem, 9vw, 2.6rem);
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}

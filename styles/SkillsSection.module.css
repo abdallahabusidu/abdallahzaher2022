@@ -177,3 +177,22 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 1.2rem 2.5rem;
+  }
+
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .categoryBlock {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .pill {
+    font-size: 0.67rem;
+    padding: 0.26rem 0.6rem;
+  }
+}
