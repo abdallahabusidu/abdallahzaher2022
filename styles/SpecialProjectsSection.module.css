@@ -1,0 +1,334 @@
+.section {
+  position: relative;
+  padding: 6rem 0 5.2rem;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.gridBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139, 165, 188, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 165, 188, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 45%, black 35%, transparent 80%);
+  pointer-events: none;
+}
+
+.glowA,
+.glowB {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(58px);
+  pointer-events: none;
+}
+
+.glowA {
+  width: 240px;
+  height: 240px;
+  left: -90px;
+  top: 15%;
+  background: rgba(245, 159, 58, 0.25);
+}
+
+.glowB {
+  width: 280px;
+  height: 280px;
+  right: -100px;
+  bottom: 10%;
+  background: rgba(129, 140, 248, 0.24);
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.labelLine {
+  width: 2rem;
+  height: 1px;
+  background: #f59f3a;
+}
+
+.labelText {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f59f3a;
+}
+
+.heading {
+  margin: 0 0 2rem;
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  letter-spacing: -0.03em;
+  color: #f7fafc;
+  line-height: 1.05;
+}
+
+.headingAccent {
+  background: linear-gradient(95deg, #f59f3a 5%, #818cf8 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(84, 102, 123, 0.45);
+  background: linear-gradient(
+    155deg,
+    rgba(10, 16, 24, 0.95),
+    rgba(9, 14, 22, 0.9)
+  );
+  padding: 1.45rem;
+  overflow: visible;
+}
+
+.accentAmber {
+  border-left: 3px solid rgba(245, 159, 58, 0.8);
+}
+
+.accentPink {
+  border-left: 3px solid rgba(240, 98, 146, 0.8);
+}
+
+.accentIndigo {
+  border-left: 3px solid rgba(129, 140, 248, 0.8);
+}
+
+.accentTeal {
+  border-left: 3px solid rgba(45, 212, 191, 0.8);
+}
+
+.index {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8ea4b8;
+  margin-bottom: 0.7rem;
+}
+
+.logoWrap {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  perspective: 900px;
+}
+
+.logoSticker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  min-height: 64px;
+  padding: 0.55rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(243, 248, 255, 0.92)
+  );
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.33),
+    0 3px 0 rgba(255, 255, 255, 0.44) inset;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition:
+    transform 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logoSticker::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  width: 28px;
+  height: 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
+  transform: rotate(-8deg);
+}
+
+.peelCorner {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(145deg, #ffffff 0%, #e9eef6 72%);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  border-top-right-radius: 0.95rem;
+  transform-origin: top right;
+  box-shadow:
+    -2px 2px 3px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .logoSticker {
+  transform: translateY(-7px) rotate(-2deg) scale(1.03);
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.38),
+    0 3px 0 rgba(255, 255, 255, 0.4) inset;
+}
+
+.card:hover .peelCorner {
+  transform: rotateX(55deg) rotateY(-25deg) translate(3px, -2px);
+}
+
+.stickerA {
+  animation: stickerFloatA 5.4s ease-in-out infinite;
+}
+
+.stickerB {
+  animation: stickerFloatB 6.2s ease-in-out infinite;
+}
+
+.logo {
+  width: auto;
+  max-height: 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 14px rgba(0, 0, 0, 0.2));
+  transform: translateZ(1px);
+}
+
+.title {
+  margin: 0;
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  color: #f9fbfd;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  margin: 0.75rem 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: #a8bbc9;
+}
+
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(130, 147, 167, 0.36);
+  color: #bdd0df;
+  border-radius: 9999px;
+  padding: 0.28rem 0.52rem;
+  background: rgba(134, 152, 172, 0.09);
+}
+
+.link,
+.privateBadge {
+  display: inline-flex;
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.link {
+  text-decoration: none;
+  color: #f0b368;
+}
+
+.privateBadge {
+  color: #9db0be;
+}
+
+.shimmer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    112deg,
+    transparent 34%,
+    rgba(255, 255, 255, 0.03),
+    transparent 72%
+  );
+  transform: translateX(-130%);
+  animation: shimmer 7s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes stickerFloatA {
+  0% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+}
+
+@keyframes stickerFloatB {
+  0% {
+    transform: translateY(0) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(5deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 4.4rem 0 3.8rem;
+  }
+
+  .inner {
+    padding: 0 1.5rem;
+  }
+}

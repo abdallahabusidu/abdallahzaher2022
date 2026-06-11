@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap");
+
+.canvas {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 12% 14%,
+      rgba(246, 178, 95, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(111, 167, 255, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(160deg, #080c12 0%, #0d1117 48%, #0f1319 100%);
+  color: #f6f7f8;
+  font-family: "Space Grotesk", "Unbounded", sans-serif;
+}
+
+.sectionSlot {
+  position: relative;
+}
+
+.sectionSlot::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: clamp(48px, 7vw, 92px);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 18, 0) 0%,
+    rgba(8, 12, 18, 0.64) 52%,
+    rgba(8, 12, 18, 0.98) 100%
+  );
+  z-index: 30;
+}
+
+.sectionSlot:last-child::after {
+  display: none;
+}
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 0.45px,
+    transparent 0.45px
+  );
+  background-size: 3px 3px;
+  opacity: 0.14;
+}
+
+.orbA,
+.orbB {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.orbA {
+  width: 260px;
+  height: 260px;
+  left: -80px;
+  top: 15%;
+  background: rgba(247, 164, 72, 0.4);
+  animation: floatA 9s ease-in-out infinite;
+}
+
+.orbB {
+  width: 320px;
+  height: 320px;
+  right: -110px;
+  top: 55%;
+  background: rgba(92, 146, 245, 0.35);
+  animation: floatB 10s ease-in-out infinite;
+}
+
+.heroCard {
+  border: 1px solid rgba(63, 71, 82, 0.75);
+  background: linear-gradient(
+    165deg,
+    rgba(19, 24, 31, 0.95),
+    rgba(11, 15, 21, 0.88)
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.heroTitle {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+  text-wrap: balance;
+}
+
+.kpiStack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.kpiCard {
+  border: 1px solid rgba(62, 70, 79, 0.85);
+  border-radius: 1.2rem;
+  background: rgba(13, 18, 24, 0.88);
+  padding: 1.15rem;
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(115, 163, 247, 0.85);
+}
+
+.kpiCard h2 {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  margin: 0;
+  font-size: 2rem;
+  color: #f0b368;
+}
+
+.kpiCard p {
+  margin: 0.35rem 0 0;
+  color: #bdc7d2;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.sectionTitle {
+  margin: 0 0 1rem;
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.timelineCard,
+.projectCard,
+.skillCard {
+  border: 1px solid rgba(54, 63, 74, 0.9);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: linear-gradient(
+    170deg,
+    rgba(15, 20, 27, 0.92),
+    rgba(11, 15, 20, 0.9)
+  );
+}
+
+.timelineCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.timelineCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: sweep 5.3s linear infinite;
+}
+
+.softBtn {
+  border: 1px solid #37404a;
+  border-radius: 0.7rem;
+  padding: 0.5rem 0.9rem;
+  color: #d9e0e7;
+  text-decoration: none;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
+.softBtn:hover {
+  border-color: #5b6876;
+  transform: translateY(-2px);
+}
+
+@keyframes floatA {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(50px, -30px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes floatB {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-45px, 28px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroCard {
+    padding: 1.3rem;
+  }
+
+  .kpiCard h2 {
+    font-size: 1.7rem;
+  }
+}

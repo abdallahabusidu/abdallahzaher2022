@@ -1,0 +1,332 @@
+/* ─── Projects Section ─── */
+.section {
+  position: relative;
+  padding: 5rem 5vw 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
+}
+
+.labelLine {
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  background: #f06292;
+}
+
+.labelText {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f06292;
+}
+
+.heading {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  line-height: 1;
+}
+
+.headingRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 3.5rem;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f06292;
+  text-decoration: none;
+  border: 1px solid rgba(240, 98, 146, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(240, 98, 146, 0.05);
+  transition:
+    background 220ms,
+    border-color 220ms,
+    transform 220ms;
+  white-space: nowrap;
+  margin-bottom: 0.4rem;
+}
+
+.viewAllLink:hover {
+  background: rgba(240, 98, 146, 0.12);
+  border-color: rgba(240, 98, 146, 0.6);
+  transform: translateY(-2px);
+}
+
+.viewAllArrow {
+  transition: transform 220ms;
+}
+
+.viewAllLink:hover .viewAllArrow {
+  transform: translateX(4px);
+}
+
+.headingAccent {
+  background: linear-gradient(100deg, #f06292 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    rgba(13, 18, 26, 0.98),
+    rgba(9, 12, 18, 0.95)
+  );
+  border: 1px solid rgba(54, 63, 74, 0.8);
+  border-radius: 1.4rem;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 280ms ease;
+}
+
+.card:hover {
+  border-color: rgba(240, 98, 146, 0.4);
+}
+
+/* Accent border tops */
+.accent_amber {
+  border-top: 2px solid #f59f3a;
+}
+.accent_pink {
+  border-top: 2px solid #f06292;
+}
+.accent_indigo {
+  border-top: 2px solid #818cf8;
+}
+
+/* Huge background number */
+.bgIndex {
+  pointer-events: none;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
+  user-select: none;
+  z-index: 0;
+}
+
+.cardInner {
+  position: relative;
+  z-index: 1;
+  padding: 1.8rem 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+}
+
+.title {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f4f7;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* Stack pills */
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid;
+}
+
+.tagAmber {
+  border-color: rgba(245, 159, 58, 0.4);
+  color: #f0b368;
+  background: rgba(245, 159, 58, 0.07);
+}
+.tagPink {
+  border-color: rgba(240, 98, 146, 0.4);
+  color: #f9a8c9;
+  background: rgba(240, 98, 146, 0.07);
+}
+.tagBlue {
+  border-color: rgba(96, 165, 250, 0.4);
+  color: #93c5fd;
+  background: rgba(96, 165, 250, 0.07);
+}
+.tagGreen {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #6ee7b7;
+  background: rgba(52, 211, 153, 0.07);
+}
+.tagPurple {
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.07);
+}
+.tagDefault {
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.05);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent);
+}
+
+/* Result text */
+.result {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #fff;
+  flex: 1;
+}
+
+/* View link */
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f06292;
+  text-decoration: none;
+  margin-top: auto;
+  transition:
+    gap 200ms,
+    opacity 200ms;
+}
+
+.viewLink:hover {
+  gap: 0.7rem;
+  opacity: 0.8;
+}
+
+.arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.privateLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8aa0b1;
+  border: 1px dashed rgba(138, 160, 177, 0.35);
+  border-radius: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  width: fit-content;
+  margin-top: auto;
+}
+
+/* Repo meta (stars / forks) */
+.repoMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.repoStat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f0b368;
+  background: rgba(245, 159, 58, 0.08);
+  border: 1px solid rgba(245, 159, 58, 0.25);
+  border-radius: 9999px;
+  padding: 0.15rem 0.55rem;
+}
+
+.repoIcon {
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.repoGhLabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2e3f4d;
+  margin-left: auto;
+}
+
+/* Corner glow */
+.cornerGlow {
+  pointer-events: none;
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240, 98, 146, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 4rem 1.5rem 3rem;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

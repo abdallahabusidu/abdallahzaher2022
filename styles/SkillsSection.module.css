@@ -1,0 +1,179 @@
+/* ─── Skills Section ─── */
+.section {
+  position: relative;
+  padding: 5rem 5vw 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
+}
+
+.labelLine {
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  background: #2dd4bf;
+}
+
+.labelText {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2dd4bf;
+}
+
+.heading {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  line-height: 1;
+  margin-bottom: 3.5rem;
+}
+
+.headingAccent {
+  background: linear-gradient(100deg, #2dd4bf 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Category block */
+.categoryBlock {
+  background: linear-gradient(
+    165deg,
+    rgba(13, 18, 26, 0.96),
+    rgba(9, 12, 18, 0.94)
+  );
+  border: 1px solid rgba(54, 63, 74, 0.8);
+  border-radius: 1.4rem;
+  padding: 1.8rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+.accent_amber {
+  border-top: 2px solid rgba(245, 159, 58, 0.7);
+}
+.accent_indigo {
+  border-top: 2px solid rgba(129, 140, 248, 0.7);
+}
+.accent_teal {
+  border-top: 2px solid rgba(45, 212, 191, 0.7);
+}
+
+/* Category header */
+.catHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.catNum {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+.catLabel {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d0dbe5;
+  letter-spacing: -0.01em;
+}
+
+/* Pills */
+.pillsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  border-radius: 0.55rem;
+  padding: 0.3rem 0.72rem;
+  border: 1px solid;
+  cursor: default;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* Weight modifiers — size/opacity */
+.pill_core {
+  font-weight: 600;
+}
+.pill_strong {
+  font-weight: 500;
+  opacity: 0.88;
+}
+.pill_mid {
+  font-weight: 400;
+  opacity: 0.65;
+  font-size: 0.66rem;
+}
+
+/* Accent color per category */
+.pill_amber {
+  border-color: rgba(245, 159, 58, 0.35);
+  color: #f0b368;
+  background: rgba(245, 159, 58, 0.06);
+}
+.pill_indigo {
+  border-color: rgba(129, 140, 248, 0.35);
+  color: #a5b4fc;
+  background: rgba(129, 140, 248, 0.06);
+}
+.pill_teal {
+  border-color: rgba(45, 212, 191, 0.35);
+  color: #5eead4;
+  background: rgba(45, 212, 191, 0.06);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 4rem 1.5rem 3rem;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

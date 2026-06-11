@@ -1,18 +1,36 @@
-import WelcomeComp from "../components/WelcomeComp";
-import ErrorBoundary from "../ErrorBoundary";
-import React from "react";
-import Skills from "./skills/index";
-import Projects from "./projects/index";
-import Contacts from "./contacts/index";
-import Youtube from "./youtube";
+import Hero from "../components/Hero";
+import ExperienceSection from "../components/ExperienceSection";
+import SpecialProjectsSection from "../components/SpecialProjectsSection";
+import ProjectsSection from "../components/ProjectsSection";
+import YoutubeSection2026 from "../components/YoutubeSection2026";
+import SkillsSection from "../components/SkillsSection";
+import ContactSection from "../components/ContactSection";
+import styles from "../styles/Portfolio2026.module.css";
+
 export default function Home() {
   return (
-    <ErrorBoundary>
-      <WelcomeComp />
-      <Skills />
-      <Projects />
-      <Youtube />
-      <Contacts />
-    </ErrorBoundary>
+    <div className={styles.canvas}>
+      <div className={styles.sectionSlot}>
+        <Hero />
+      </div>
+      <div className={styles.sectionSlot}>
+        <ExperienceSection />
+      </div>
+      <div className={styles.sectionSlot}>
+        <SpecialProjectsSection />
+      </div>
+      <div className={styles.sectionSlot}>
+        <ProjectsSection />
+      </div>
+      <div className={styles.sectionSlot}>
+        <YoutubeSection2026 />
+      </div>
+      <div className={styles.sectionSlot}>
+        <SkillsSection />
+      </div>
+      <div className={styles.sectionSlot}>
+        <ContactSection />
+      </div>
+    </div>
   );
 }

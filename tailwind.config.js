@@ -5,33 +5,21 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    screens: {
-      xs: "200px",
-      // => @media (min-width: 200px) {... }
-
-      sm: "640px",
-      // => @media (min-width: 640px) { ... }
-
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
-
-      lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
-      xl: "1280px",
-      // => @media (min-width: 1280px) {... }
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+        border: "var(--border)",
+        ring: "var(--ring)",
+        "sidebar-ring": "var(--sidebar-ring)",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
     },
-    clipPath: {
-      main: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-      active: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-    },
-    textFillColor: (theme) => theme("borderColor"),
-    textStrokeColor: (theme) => theme("borderColor"),
-    textStrokeWidth: (theme) => theme("borderWidth"),
   },
-  plugins: [
-    require("tailwind-clip-path"),
-    require("tailwindcss-text-fill-stroke"),
-  ],
+  plugins: [],
 };

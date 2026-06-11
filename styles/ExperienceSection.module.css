@@ -1,0 +1,422 @@
+/* ─── Experience Section ─── */
+.section {
+  position: relative;
+  padding: 7rem 0 5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 10% 12%,
+      rgba(245, 159, 58, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 84%,
+      rgba(129, 140, 248, 0.13),
+      transparent 36%
+    ),
+    linear-gradient(
+      160deg,
+      rgba(10, 14, 20, 0.97) 0%,
+      rgba(7, 11, 17, 0.96) 100%
+    );
+  border: 1px solid rgba(90, 104, 122, 0.2);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.bgGrid {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(141, 166, 188, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141, 166, 188, 0.09) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(circle at 50% 35%, black 38%, transparent 80%);
+}
+
+.bgGlowA,
+.bgGlowB {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(58px);
+}
+
+.bgGlowA {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  top: 20%;
+  background: rgba(245, 159, 58, 0.24);
+}
+
+.bgGlowB {
+  width: 240px;
+  height: 240px;
+  right: -90px;
+  bottom: 14%;
+  background: rgba(129, 140, 248, 0.2);
+}
+
+/* Label row */
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
+}
+
+.labelLine {
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  background: #f59f3a;
+}
+
+.labelText {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f59f3a;
+}
+
+/* Heading */
+.heading {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  line-height: 1;
+  margin-bottom: 4rem;
+}
+
+.headingAccent {
+  background: linear-gradient(100deg, #f59f3a 0%, #f06292 60%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Timeline structure */
+.timelineWrap {
+  display: flex;
+  gap: 3rem;
+}
+
+/* Vertical line */
+.lineTrack {
+  flex-shrink: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lineFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #f59f3a, #f06292, #818cf8);
+  border-radius: 9999px;
+  will-change: height;
+}
+
+/* Cards column */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: linear-gradient(
+    160deg,
+    rgba(14, 19, 27, 0.96),
+    rgba(9, 12, 18, 0.94)
+  );
+  border: 1px solid rgba(54, 63, 74, 0.8);
+  border-radius: 1.2rem;
+  padding: 1.8rem 1.8rem 1.5rem;
+  overflow: hidden;
+  transition:
+    border-color 260ms ease,
+    transform 260ms ease;
+}
+
+.card:hover {
+  transform: translateX(6px);
+}
+
+/* Accent variants — border-left color */
+.accentAmber {
+  border-left: 3px solid rgba(245, 159, 58, 0.7);
+}
+.accentPink {
+  border-left: 3px solid rgba(240, 98, 146, 0.7);
+}
+.accentIndigo {
+  border-left: 3px solid rgba(129, 140, 248, 0.7);
+}
+.accentTeal {
+  border-left: 3px solid rgba(45, 212, 191, 0.7);
+}
+
+/* Timeline dot */
+.dot {
+  position: absolute;
+  left: -3.55rem;
+  top: 1.9rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f59f3a;
+  border: 2px solid #090c12;
+  box-shadow: 0 0 10px rgba(245, 159, 58, 0.5);
+}
+
+/* Card header */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.cardIndex {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 159, 58, 0.2);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.cardPeriod {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4e6070;
+  margin-bottom: 0.35rem;
+}
+
+/* Base badge */
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+/* JobType variants */
+.badgeFullTime {
+  border-color: rgba(74, 222, 128, 0.4);
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.07);
+}
+
+.badgePartTime {
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.07);
+}
+
+.badgeContract {
+  border-color: rgba(129, 140, 248, 0.4);
+  color: #818cf8;
+  background: rgba(129, 140, 248, 0.07);
+}
+
+.badgeFreelance {
+  border-color: rgba(240, 98, 146, 0.4);
+  color: #f06292;
+  background: rgba(240, 98, 146, 0.07);
+}
+
+/* WorkMode variants */
+.modeBadgeOnSite {
+  border-color: rgba(245, 159, 58, 0.35);
+  color: #f0b368;
+  background: rgba(245, 159, 58, 0.06);
+}
+
+.modeBadgeRemote {
+  border-color: rgba(96, 165, 250, 0.35);
+  color: #93c5fd;
+  background: rgba(96, 165, 250, 0.06);
+}
+
+.modeBadgeHybrid {
+  border-color: rgba(45, 212, 191, 0.35);
+  color: #5eead4;
+  background: rgba(45, 212, 191, 0.06);
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+}
+
+.flagChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  padding: 0.15rem 0.55rem 0.15rem 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    border-color 200ms ease,
+    background 200ms ease;
+}
+
+.flagChip:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.flagEmoji {
+  font-size: 1rem;
+  line-height: 1;
+  /* Prevent the flag from being cut off on some OSes */
+  display: inline-block;
+  font-family:
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.flagLabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a7080;
+}
+
+.cardCompany {
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.cardRole {
+  font-size: 0.82rem;
+  color: #7a93a8;
+  margin-top: 0.3rem;
+  letter-spacing: 0.01em;
+}
+
+/* Divider */
+.cardDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent);
+  margin: 1rem 0;
+}
+
+/* Highlights */
+.cardList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
+}
+
+.cardItem {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #7a93a8;
+}
+
+.cardBullet {
+  flex-shrink: 0;
+  color: #f59f3a;
+  font-size: 0.75rem;
+  margin-top: 0.18rem;
+}
+
+/* Shimmer */
+.shimmer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.03),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: shimmerMove 7s ease-in-out infinite;
+}
+
+@keyframes shimmerMove {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timelineWrap {
+    gap: 1.5rem;
+  }
+
+  .lineTrack {
+    display: none;
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .cardIndex {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 4rem 0 3rem;
+  }
+
+  .inner {
+    padding: 0 1.5rem;
+  }
+}
