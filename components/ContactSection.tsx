@@ -46,7 +46,7 @@ export default function ContactSection() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          Open to
+          Open to Senior
           <br />
           <span className={styles.headingAccent}>Frontend</span> &amp;
           <br />
@@ -131,7 +131,7 @@ export default function ContactSection() {
           <span className={styles.footerDot} aria-hidden>
             ✦
           </span>
-          <span>Full-Stack Engineer · Dubai</span>
+          <span>Senior Full-Stack Engineer · Dubai</span>
         </motion.div>
       </div>
     </section>

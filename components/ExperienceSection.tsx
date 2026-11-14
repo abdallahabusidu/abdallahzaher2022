@@ -52,7 +52,7 @@ const EXPERIENCE: ExperienceItem[] = [
   {
     index: "01",
     company: "Eunx",
-    role: "Frontend Developer · Leads frontend team",
+    role: "Frontend Developer (React / Next.js)",
     period: "Feb 2025 — Present",
     location: "On-site · Dubai",
     flag: "🇦🇪",

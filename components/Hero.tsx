@@ -4,8 +4,8 @@ import styles from "../styles/Hero.module.css";
 
 /* ─── Data ─── */
 const ROLES = [
-  "Full-Stack Engineer",
-  "Frontend Team Lead",
+  "Senior Frontend Engineer",
+  "Senior Full-Stack Engineer",
   "React Native Developer",
   "AI-Powered Products",
 ];
@@ -173,7 +173,7 @@ export default function Hero() {
               }}
             >
               <span className={styles.pulse} aria-hidden />
-              Open to new roles · Dubai
+              Open to Senior roles · Dubai
             </motion.div>
 
             {/* Giant staggered name */}
@@ -242,7 +242,7 @@ export default function Hero() {
                 },
               }}
             >
-              Full-stack engineer with 5+ years shipping React, Next.js and
+              Senior full-stack engineer with 5+ years shipping React, Next.js and
               React Native products: a fintech platform, apps live on the App
               Store and Google Play, and AI-powered features. Based in Dubai.
             </motion.p>
