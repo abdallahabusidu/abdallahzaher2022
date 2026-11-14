@@ -14,7 +14,7 @@ const LINKS = [
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@CodewithPosidoon/videos?app=desktop&view=0&sort=dd&shelf_id=2",
+    href: "https://www.youtube.com/@CodewithPosidoon",
     external: true,
   },
 ];
@@ -50,7 +50,7 @@ export default function ContactSection() {
           <br />
           <span className={styles.headingAccent}>Frontend</span> &amp;
           <br />
-          Creative Roles
+          Full-Stack Roles
         </motion.h2>
 
         <motion.p
@@ -60,8 +60,8 @@ export default function ContactSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.55, delay: 0.15 }}
         >
-          Available for product-focused engineering, immersive marketing builds,
-          and high-performance frontend architecture. Based in Dubai.
+          Available for product-focused engineering, mobile apps, AI-powered
+          features and high-performance frontend architecture. Based in Dubai.
         </motion.p>
 
         {/* Contact cards */}
@@ -131,7 +131,7 @@ export default function ContactSection() {
           <span className={styles.footerDot} aria-hidden>
             ✦
           </span>
-          <span>Senior Full-Stack Developer · Dubai</span>
+          <span>Senior Full-Stack Engineer · Dubai</span>
         </motion.div>
       </div>
     </section>

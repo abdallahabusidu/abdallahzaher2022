@@ -4,10 +4,10 @@ import styles from "../styles/Hero.module.css";
 
 /* ─── Data ─── */
 const ROLES = [
-  "Creative Developer",
-  "Frontend Team Lead",
-  "3D Web Engineer",
-  "Full-Stack Developer",
+  "Senior Frontend Engineer",
+  "Senior Full-Stack Engineer",
+  "React Native Developer",
+  "AI-Powered Products",
 ];
 
 const MARQUEE_ITEMS = [
@@ -21,10 +21,12 @@ const MARQUEE_ITEMS = [
   "TailwindCSS",
   "Node.js",
   "NestJS",
+  "FastAPI",
+  "Supabase",
+  "PostgreSQL",
   "MongoDB",
   "Docker",
   "Figma",
-  "Blender",
   "React Native",
   "WebGL",
 ];
@@ -171,7 +173,7 @@ export default function Hero() {
               }}
             >
               <span className={styles.pulse} aria-hidden />
-              Available for Senior Roles · Dubai
+              Open to Senior roles · Dubai
             </motion.div>
 
             {/* Giant staggered name */}
@@ -240,9 +242,9 @@ export default function Hero() {
                 },
               }}
             >
-              Senior Full-Stack Developer with 5+ years crafting fintech
-              platforms, interactive 3D experiences, and conversion-driven
-              product interfaces. Based in Dubai.
+              Senior full-stack engineer with 5+ years shipping React, Next.js and
+              React Native products: a fintech platform, apps live on the App
+              Store and Google Play, and AI-powered features. Based in Dubai.
             </motion.p>
 
             {/* CTAs */}
@@ -284,9 +286,8 @@ export default function Hero() {
                 { label: "GitHub", href: "https://github.com/abdallahabusidu" },
                 {
                   label: "YouTube",
-                  href: "https://www.youtube.com/@CodewithPosidoon/videos?app=desktop&view=0&sort=dd&shelf_id=2",
+                  href: "https://www.youtube.com/@CodewithPosidoon",
                 },
-                { label: "+971 52 775 9096", href: "tel:+971527759096" },
               ].map((s) => (
                 <a
                   key={s.label}
