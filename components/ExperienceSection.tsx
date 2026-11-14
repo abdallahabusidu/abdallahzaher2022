@@ -52,7 +52,7 @@ const EXPERIENCE: ExperienceItem[] = [
   {
     index: "01",
     company: "Eunx",
-    role: "React.js / Next.js Frontend Engineer",
+    role: "Frontend Developer · Leads frontend team",
     period: "Feb 2025 — Present",
     location: "On-site · Dubai",
     flag: "🇦🇪",
@@ -71,7 +71,7 @@ const EXPERIENCE: ExperienceItem[] = [
     index: "02",
     company: "StoryMe",
     role: "Creative Developer",
-    period: "Jul 2024 — Dec 2024",
+    period: "Jan 2024 — Dec 2024",
     location: "Remote · Cairo",
     flag: "🇪🇬",
     country: "Egypt",
@@ -120,7 +120,7 @@ const EXPERIENCE: ExperienceItem[] = [
   {
     index: "05",
     company: "Intella",
-    role: "React / Next.js Frontend Engineer",
+    role: "Frontend Developer, AI Products",
     period: "Sep 2022 — Feb 2024",
     location: "On-site · Cairo",
     flag: "🇪🇬",
@@ -129,7 +129,8 @@ const EXPERIENCE: ExperienceItem[] = [
     mode: WorkMode.OnSite,
     accent: "amber",
     highlights: [
-      "Developed IntellaVx and IntellaCx dashboards, improving internal workflows and client interaction.",
+      "Integrated LLMs and AI backend endpoints into the IntellaVx and IntellaCx conversational AI products used by business clients.",
+      "Built chatbot interfaces, streamed LLM responses, speech-to-text transcript views and dashboards for AI-generated summaries and insights.",
       "Contributed to $3.5M fundraising success by supporting investor demos and product readiness.",
       "Achieved the highest Jira task-completion rate with 150+ resolved tasks.",
     ],
@@ -138,7 +139,7 @@ const EXPERIENCE: ExperienceItem[] = [
     index: "06",
     company: "Smartella / LearnCity",
     role: "Software Engineer",
-    period: "Jul 2021 — Aug 2022",
+    period: "Jun 2021 — Aug 2022",
     location: "Remote · London",
     flag: "🇬🇧",
     country: "United Kingdom",
@@ -146,8 +147,7 @@ const EXPERIENCE: ExperienceItem[] = [
     mode: WorkMode.Remote,
     accent: "pink",
     highlights: [
-      "Designed and optimized high-conversion landing pages for 15+ clients",
-      "Increased click-through rates by 45% and client satisfaction by 70%",
+      "Designed and optimised high-conversion landing pages for 15+ client projects.",
     ],
   },
 ];

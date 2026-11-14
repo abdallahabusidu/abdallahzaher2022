@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "../styles/YoutubeSection2026.module.css";
 
-const CHANNEL_URL = "https://www.youtube.com/@CodewithPosidoon/videos?app=desktop&view=0&sort=dd&shelf_id=2";
+const CHANNEL_URL = "https://www.youtube.com/@CodewithPosidoon";
 
 const VIDEOS = [
   {

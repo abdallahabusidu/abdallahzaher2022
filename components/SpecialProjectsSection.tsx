@@ -5,41 +5,11 @@ import koapathLogo from "../assets/Koapath.png";
 import { ALL_PROJECTS, Project } from "../data/projectsData";
 import styles from "../styles/SpecialProjectsSection.module.css";
 import StickerPeel from "./StickerPeel";
-const targetTitles = ["Douoon", "Koapath"];
+const targetTitles = ["Douoon", "Koapath", "NearMiss", "AI Kids Club"];
 
-const fallback: Record<
-  string,
-  Omit<Project, "image"> & { image: StaticImageData }
-> = {
-  Douoon: {
-    index: "87",
-    title: "Douoon",
-    stack: ["React Native", "TypeScript", "Real Product"],
-    result:
-      "Premium product platform focused on polished user journeys, conversion performance, and scalable frontend architecture.",
-    accent: "indigo",
-    href: "https://www.douoon.com",
-    stars: null,
-    forks: null,
-    category: "Frontend",
-    image: douoonLogo,
-  },
-  Koapath: {
-    index: "88",
-    title: "Koapath",
-    stack: ["React", "Node.js", "Analytics"],
-    result:
-      "Data-first workflow platform crafted for operations teams with strong dashboard UX and high-clarity reporting surfaces.",
-    accent: "teal",
-    href: "https://www.koapath.com",
-    stars: null,
-    forks: null,
-    category: "Frontend",
-    image: koapathLogo,
-  },
-};
+const fallback: Record<string, Omit<Project, "image">> = {};
 
-const logoMap: Record<string, StaticImageData> = {
+const logoMap: Record<string, StaticImageData | undefined> = {
   Douoon: douoonLogo,
   Koapath: koapathLogo,
 };
@@ -56,7 +26,7 @@ const spotlight = targetTitles.map((name) => {
     (p) => p.title.toLowerCase() === name.toLowerCase(),
   );
   return existing ?? fallback[name];
-});
+}).filter((p): p is Project => Boolean(p));
 
 export default function SpecialProjectsSection() {
   return (
@@ -73,7 +43,7 @@ export default function SpecialProjectsSection() {
           transition={{ duration: 0.5 }}
         >
           <span className={styles.labelLine} />
-          <span className={styles.labelText}>Special Builds</span>
+          <span className={styles.labelText}>Selected Work</span>
         </motion.div>
 
         <motion.h2
@@ -83,8 +53,8 @@ export default function SpecialProjectsSection() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6 }}
         >
-          Douoon &amp;
-          <span className={styles.headingAccent}> Koapath</span>
+          Products
+          <span className={styles.headingAccent}> I&apos;ve Shipped</span>
         </motion.h2>
 
         <div className={styles.cards}>
@@ -98,10 +68,13 @@ export default function SpecialProjectsSection() {
               transition={{ duration: 0.55, delay: idx * 0.12 }}
               whileHover={{ y: -8 }}
             >
-              <span className={styles.index}>{project.index}</span>
+              <span className={styles.index}>
+                {String(idx + 1).padStart(2, "0")}
+              </span>
               <div>
+                {logoMap[project.title] && (
                 <StickerPeel
-                  imageSrc={logoMap[project.title].src}
+                  imageSrc={logoMap[project.title]!.src}
                   width={210}
                   rotate={-8}
                   peelBackHoverPct={30}
@@ -117,6 +90,7 @@ export default function SpecialProjectsSection() {
                     overflow: "visible",
                   }}
                 />
+                )}
               </div>
 
               <h3 className={styles.title}>{project.title}</h3>
