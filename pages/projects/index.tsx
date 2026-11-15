@@ -1,241 +1,118 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import styles from "../../styles/AllProjects.module.css";
-import { ALL_PROJECTS, Project } from "../../data/projectsData";
-import { stackAccent } from "../../components/ProjectsSection";
-
-const CATEGORIES = [
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ALL_PROJECTS } from "../../data/projectsData";
+import { featuredWork } from "../../data/featuredWork";
+import { NeonHeader, NeonFooter } from "../../components/NeonLayout";
+import s from "../../styles/Neon.module.css";
+const categories = [
   "All",
-  "Creative 3D",
-  "Frontend",
-  "Mobile",
-  "Backend",
-  "Education",
-  "CS",
-  "ML/AI",
-  "Hardware",
-  "Game",
-  "Private",
-] as const;
-type Category = (typeof CATEGORIES)[number];
-
-const accentGradients: Record<Project["accent"], string> = {
-  amber: "linear-gradient(135deg, rgba(245,159,58,0.18) 0%, transparent 60%)",
-  pink: "linear-gradient(135deg, rgba(240,98,146,0.18) 0%, transparent 60%)",
-  indigo: "linear-gradient(135deg, rgba(129,140,248,0.18) 0%, transparent 60%)",
-  teal: "linear-gradient(135deg, rgba(45,212,191,0.18) 0%, transparent 60%)",
-};
-
-const accentBorder: Record<Project["accent"], string> = {
-  amber: "rgba(245,159,58,0.45)",
-  pink: "rgba(240,98,146,0.45)",
-  indigo: "rgba(129,140,248,0.45)",
-  teal: "rgba(45,212,191,0.45)",
-};
-
-const accentText: Record<Project["accent"], string> = {
-  amber: "#f0b368",
-  pink: "#f9a8c9",
-  indigo: "#a5b4fc",
-  teal: "#5eead4",
-};
-
-function randomSizes(count: number): number[] {
-  return Array.from({ length: count }, () => {
-    const r = Math.random();
-    if (r < 0.12) return 2; // featured: 2col × 2row
-    if (r < 0.26) return 1; // wide: 2col × 1row
-    return 0;               // normal: 1col × 1row
-  });
-}
-
-export default function ProjectsPage() {
-  const [active, setActive] = useState<Category>("All");
-  const [bentoSizes, setBentoSizes] = useState<number[]>([]);
-
-  const filtered =
-    active === "All"
-      ? ALL_PROJECTS
-      : ALL_PROJECTS.filter((p) => p.category === active);
-
-  useEffect(() => {
-    setBentoSizes(randomSizes(filtered.length));
-  }, [active]);
-
+  ...Array.from(new Set(ALL_PROJECTS.map((p) => p.category))),
+];
+export default function Projects() {
+  const [category, setCategory] = useState("All");
+  const [query, setQuery] = useState("");
+  const filtered = ALL_PROJECTS.filter(
+    (p) =>
+      (category === "All" || category === p.category) &&
+      `${p.title} ${p.stack.join(" ")} ${p.result}`
+        .toLowerCase()
+        .includes(query.toLowerCase()),
+  );
   return (
-    <div className={styles.page}>
-      {/* Ambient orbs */}
-      <div className={styles.orbA} aria-hidden />
-      <div className={styles.orbB} aria-hidden />
-      <div className={styles.bgGrid} aria-hidden />
-
-      {/* Back nav */}
-      <motion.div
-        className={styles.backRow}
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
-      >
-        <Link href="/" className={styles.backLink}>
-          ← Back to Home
+    <div className={s.site} id="top">
+      <Head>
+        <title>Project archive — Abdallah Zaher</title>
+        <meta
+          name="description"
+          content="Browse Abdallah Zaher's complete collection of web, mobile, AI and creative coding projects."
+        />
+      </Head>
+      <a className={s.skip} href="#archive">
+        Skip to project archive
+      </a>
+      <NeonHeader />
+      <main className={s.case} id="archive">
+        <Link href="/#work" className={s.backLink}>
+          <ArrowLeft size={15} /> Selected work
         </Link>
-        <span className={styles.backSep} aria-hidden />
-        <span className={styles.backCount}>{filtered.length} projects</span>
-      </motion.div>
-
-      {/* Header */}
-      <motion.header
-        className={styles.header}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <p className={styles.labelBadge}>Full Project Archive</p>
-        <h1 className={styles.heading}>
-          All
-          <span className={styles.headingAccent}> Projects</span>
-        </h1>
-        <p className={styles.sub}>
-          {ALL_PROJECTS.length} repositories spanning creative 3D, frontend
-          products, mobile apps, backend APIs, machine learning, hardware
-          engineering, games, and open-source education.
-        </p>
-      </motion.header>
-
-      {/* Category filter */}
-      <motion.div
-        className={styles.filters}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            className={`${styles.filterBtn} ${active === cat ? styles.filterActive : ""}`}
-            onClick={() => setActive(cat)}
+        <div className={s.caseHeading}>
+          <span className={s.label}>PRODUCTS / EXPERIMENTS / EXPLORATIONS</span>
+          <h1>The archive.</h1>
+          <p className={s.caseLead}>
+            A collection of things built, ideas explored,
+            <br />
+            and lessons put into practice.
+          </p>
+        </div>
+        <div className={s.filters}>
+          <label htmlFor="search">Search projects</label>
+          <input
+            id="search"
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Project, technology, or keyword"
+          />
+          <label htmlFor="category">Category</label>
+          <select
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
           >
-            {cat}
-            {cat !== "All" && (
-              <span className={styles.filterCount}>
-                {ALL_PROJECTS.filter((p) => p.category === cat).length}
-              </span>
-            )}
-          </button>
-        ))}
-      </motion.div>
-
-      {/* Bento grid */}
-      <motion.div className={styles.bento} layout>
-        <AnimatePresence mode="popLayout">
-          {filtered.map((project, idx) => (
-            <motion.article
-              key={project.index}
-              layout
-              className={`${styles.card} ${
-                bentoSizes[idx] === 2
-                  ? styles.cardFeatured
-                  : bentoSizes[idx] === 1
-                    ? styles.cardWide
-                    : ""
-              }`}
-              style={{
-                background: accentGradients[project.accent],
-                borderColor: accentBorder[project.accent],
-              }}
-              initial={{ opacity: 0, scale: 0.92, y: 24 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.88, y: -16 }}
-              transition={{
-                duration: 0.4,
-                delay: idx * 0.04,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{ y: -6, transition: { duration: 0.22 } }}
-            >
-              {/* Top row */}
-              <div className={styles.cardHead}>
-                <span
-                  className={styles.cardIndex}
-                  style={{
-                    WebkitTextStrokeColor: accentBorder[project.accent],
-                  }}
-                >
-                  {project.index}
-                </span>
-
-                <div className={styles.cardHeadRight}>
-                  {/* Category chip */}
-                  <span
-                    className={styles.catChip}
-                    style={{
-                      borderColor: accentBorder[project.accent],
-                      color: accentText[project.accent],
-                    }}
-                  >
-                    {project.category}
-                  </span>
-
-                  {/* Stars/forks */}
-                  {project.stars !== null && (
-                    <span className={styles.starBadge}>★ {project.stars}</span>
-                  )}
+            {categories.map((c) => (
+              <option key={c}>{c}</option>
+            ))}
+          </select>
+        </div>
+        <p className={s.resultsCount} aria-live="polite">
+          {filtered.length} {filtered.length === 1 ? "project" : "projects"}
+        </p>
+        <div>
+          {filtered.map((p) => {
+            const featured = featuredWork.find((f) => f.title === p.title);
+            return (
+              <article key={p.index} className={s.archiveRow}>
+                <span className={s.label}>{p.category}</span>
+                <h2>{p.title}</h2>
+                <p>{p.result}</p>
+                <div className={s.tags}>
+                  {p.stack.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
                 </div>
-              </div>
-
-              {/* Title */}
-              <h2
-                className={styles.cardTitle}
-                style={{ color: accentText[project.accent] }}
-              >
-                {project.title}
-              </h2>
-
-              {/* Stack pills */}
-              <div className={styles.stackRow}>
-                {project.stack.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`${styles.tag} ${stackAccent[tag] ?? styles.tagDefault}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Result — only shown on featured or large cards */}
-              <p className={styles.result}>{project.result}</p>
-
-              {/* Link */}
-              {project.isPrivate || !project.href ? (
-                <span
-                  className={styles.cardPrivate}
-                  aria-label={`${project.title} is private`}
-                >
-                  Private Repository 🔒
-                </span>
-              ) : (
-                <a
-                  href={project.href}
-                  target={
-                    project.href.startsWith("https") ? "_blank" : undefined
-                  }
-                  rel="noopener noreferrer"
-                  className={styles.cardLink}
-                  style={{ color: accentText[project.accent] }}
-                  aria-label={`View ${project.title}`}
-                >
-                  View ↗
-                </a>
-              )}
-
-              {/* Shimmer */}
-              <div className={styles.shimmer} aria-hidden />
-            </motion.article>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+                {featured ? (
+                  <Link href={`/work/${featured.slug}`}>
+                    View project <ArrowUpRight size={15} />
+                  </Link>
+                ) : p.href ? (
+                  <a href={p.href} target="_blank" rel="noopener noreferrer">
+                    Explore project <ArrowUpRight size={15} />
+                  </a>
+                ) : (
+                  <span className={s.resultsCount}>Private project</span>
+                )}
+              </article>
+            );
+          })}
+        </div>
+        {!filtered.length && (
+          <div className={s.emptyState}>
+            <p>No matching projects. Try a different keyword or category.</p>
+            <button
+              className={s.secondaryButton}
+              onClick={() => {
+                setQuery("");
+                setCategory("All");
+              }}
+            >
+              Clear filters
+            </button>
+          </div>
+        )}
+      </main>
+      <NeonFooter />
     </div>
   );
 }

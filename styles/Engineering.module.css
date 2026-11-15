@@ -1,0 +1,281 @@
+.engineering {
+  border-top: 1px solid #ffffff1c;
+  padding: 60px 0 0;
+  scroll-margin-top: 35px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+  padding: 30px 0 60px;
+}
+.kicker {
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #a999b9;
+}
+.intro h2 {
+  font-size: clamp(35px, 3.8vw, 55px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 24px 0;
+}
+.intro h2 span {
+  color: #ffaf9b;
+}
+.intro > p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #b1adc2;
+  max-width: 450px;
+}
+.approachButtons {
+  display: flex;
+  gap: 8px;
+  margin: 30px 0 5px;
+  flex-wrap: wrap;
+}
+.approachButtons > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  border: 1px solid #ffffff20;
+  border-radius: 9px;
+  background: #ffffff04;
+  color: #aaa5bc;
+  font-size: 10px;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.approachButtons > button[aria-pressed="true"] {
+  border-color: #ffb49c66;
+  color: #ffc5ae;
+  background: #ffb29c0b;
+}
+.system {
+  position: relative;
+  border: 1px solid #b49cc633;
+  background:
+    radial-gradient(ellipse at 100% 0%, #8d5d9d19, transparent 70%), #10121e;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 25px 70px #0003;
+}
+.systemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #b9a1cb;
+}
+.systemHeader > span {
+  font-family: monospace;
+  font-size: 7px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.systemHeader i {
+  width: 4px;
+  height: 4px;
+  background: #ffba9b;
+  box-shadow: 0 0 9px #ffba9b;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.nodes {
+  padding: 30px 5px 25px;
+  animation: systemEnter 0.45s ease-out;
+}
+.node {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #ffffff1c;
+  background: linear-gradient(100deg, #ffffff06, transparent);
+  padding: 15px;
+  border-radius: 10px;
+}
+.node > span {
+  font-family: monospace;
+  font-size: 9px;
+  color: #776b91;
+}
+.node > div {
+  flex: 1;
+}
+.node strong {
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+}
+.node small {
+  font-family: monospace;
+  font-size: 8px;
+  color: #9891b0;
+  display: block;
+  margin-top: 4px;
+  line-height: 1.7;
+}
+.node > svg {
+  color: #cbafdc;
+  flex-shrink: 0;
+}
+.connector {
+  height: 27px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  color: #836b98;
+}
+.connector:before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background: #b59bce26;
+  position: absolute;
+}
+.connector svg {
+  position: relative;
+  background: #10121e;
+}
+.connector i {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 4px;
+  background: #ffc9b1;
+  box-shadow: 0 0 7px #ffc9b1;
+  animation: travel 2.8s linear infinite;
+}
+.approachExplanation {
+  padding: 20px 5px 0;
+  border-top: 1px solid #ffffff13;
+  min-height: 140px;
+}
+.approachExplanation h3 {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.approachExplanation p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #aba2bc;
+}
+.capabilities {
+  padding: 27px 0;
+  border-top: 1px solid #ffffff14;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #8e879f;
+}
+.capabilities i {
+  font-style: normal;
+  color: #bd8e91;
+  font-size: 13px;
+}
+@keyframes travel {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    top: 90%;
+    opacity: 0;
+  }
+}
+@keyframes systemEnter {
+  from {
+    opacity: 0.5;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 700px) {
+  .engineering {
+    padding-top: 40px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 15px 0 35px;
+  }
+  .kicker {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .intro h2 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+  .intro > p {
+    font-size: 12px;
+  }
+  .approachButtons {
+    gap: 7px;
+    margin-top: 25px;
+  }
+  .approachButtons > button {
+    padding: 10px;
+    font-size: 9px;
+    gap: 6px;
+  }
+  .system {
+    padding: 20px;
+  }
+  .systemHeader > span {
+    font-size: 6px;
+  }
+  .node {
+    padding: 13px 11px;
+    gap: 9px;
+  }
+  .node strong {
+    font-size: 12px;
+  }
+  .node small {
+    font-size: 7px;
+  }
+  .approachExplanation {
+    min-height: 160px;
+  }
+  .approachExplanation p {
+    font-size: 10px;
+  }
+  .capabilities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    font-size: 7px;
+    padding: 25px 0;
+  }
+  .capabilities i {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .engineering * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
