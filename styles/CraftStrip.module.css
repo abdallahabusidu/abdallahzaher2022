@@ -1,0 +1,115 @@
+.strip {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 0%, #49334427, transparent 75%),
+    linear-gradient(180deg, #12121e, #090c16);
+  border-top: 1px solid #ffb2a244;
+  border-bottom: 1px solid #ffffff1b;
+  scroll-margin-top: 30px;
+}
+.strip:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  inset: 0 0 auto;
+  background: linear-gradient(90deg, transparent, #ffc5b544, transparent);
+}
+.inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(1350px, 92%);
+  margin: 0 auto;
+  list-style: none;
+  padding: 21px 0;
+}
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 76px;
+}
+.item + .item:before {
+  content: "";
+  position: absolute;
+  height: 34px;
+  width: 1px;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #d0c4e84d 25%,
+    #d0c4e84d 75%,
+    transparent
+  );
+}
+.item span {
+  color: #eae7f0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.15px;
+  text-align: center;
+  min-width: 132px;
+}
+.laurel,
+.mirrored {
+  width: 34px;
+  height: 68px;
+  flex-shrink: 0;
+  color: #c89d61;
+  filter: drop-shadow(0 0 7px #d8ab6122);
+  transition:
+    color 0.25s,
+    filter 0.25s;
+}
+.mirrored {
+  transform: scaleX(-1);
+}
+.item:hover svg {
+  color: #efc78d;
+  filter: drop-shadow(0 0 9px #d8ab6144);
+}
+@media (max-width: 900px) {
+  .item {
+    gap: 2px;
+  }
+  .item span {
+    min-width: 105px;
+    font-size: 11px;
+  }
+  .laurel,
+  .mirrored {
+    width: 26px;
+    height: 58px;
+  }
+}
+@media (max-width: 600px) {
+  .inner {
+    width: 92%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 14px 0;
+    row-gap: 10px;
+  }
+  .item {
+    min-height: 70px;
+  }
+  .item:nth-child(3):before {
+    display: none;
+  }
+  .item span {
+    font-size: 11px;
+    min-width: 100px;
+  }
+  .laurel,
+  .mirrored {
+    width: 26px;
+    height: 58px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .strip svg {
+    transition: none;
+  }
+}
